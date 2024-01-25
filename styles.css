@@ -1,0 +1,27 @@
+#header{
+    color: white;
+    text-align: center;
+}
+#cityname{
+    width: 150px;
+}
+#MyBtn{
+    display: flex;
+    background-color: gray;
+    font-size: medium;
+    width: 150px;
+    margin-top: 10px;
+}
+#line{
+    width: 150px;
+}
+.cityContainer{
+    display: flex;
+    flex: wrap;
+    flex-direction: column;
+    width: 150px;
+    margin-top: 2%;
+}
+#london{
+    background-color: blue;
+}
