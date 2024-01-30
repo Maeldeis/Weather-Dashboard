@@ -7,7 +7,7 @@
 }
 #MyBtn{
     display: flex;
-    background-color: gray;
+    background-color: rgb(55, 111, 216);
     font-size: medium;
     width: 150px;
     margin-top: 10px;
@@ -23,7 +23,7 @@
     margin-top: 2%;
 }
 #london{
-    background-color: blue;
+    background-color: rgb(72, 110, 212);
 }
 .weatherData{
     position: absolute;
@@ -33,7 +33,7 @@
     border:solid black 2px;
     height:200px;
     padding:0 60% 0 20px;
-    background-color: aquamarine;
+    background-color: rgb(109, 159, 224);
   }
   .weatherForecast{
       position:absolute;
