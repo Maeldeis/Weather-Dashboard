@@ -13,5 +13,3 @@ Weather dashboard that runs in the browser using an API and features dynamically
 * Uses `localStorage` to store persistent data.
 
 ![My Demo](./assets/images./demo)
-
-## Open in browser
