@@ -14,9 +14,8 @@ var keyCount = localStorage.length;
 
 searchButton.click(function () {
     var searchInput = $(".searchInput").val();
-    var urlCurrent = "https://api.openweathermap.org/data/2.5/weather?q=" + searchInput + "&Appid=" + apiKey + "&units=metric"; // Change units to metric
-    var urlFiveDay = "https://api.openweathermap.org/data/2.5/forecast?q=" + searchInput + "&Appid=" + apiKey + "&units=metric"; // Change units to metric
-
+    var urlCurrent = "https://api.openweathermap.org/data/2.5/weather?q=" + searchInput + "&Appid=" + apiKey + "&units=metric"; 
+    var urlFiveDay = "https://api.openweathermap.org/data/2.5/forecast?q=" + searchInput + "&Appid=" + apiKey + "&units=metric"; 
     if (searchInput !== "") {
         $.ajax({
             url: urlCurrent,
@@ -32,16 +31,14 @@ searchButton.click(function () {
             currentCard.empty();
             var currentName = currentCard.append("<p>");
             currentCard.append(currentName);
-
             var timeUTC = new Date(response.dt * 1000);
             currentName.append(response.name + " " + timeUTC.toLocaleDateString("en-US"));
             currentName.append(`<img src="https://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png">`);
             var currentTemp = currentName.append("<p>");
             currentName.append(currentTemp);
-            currentTemp.append("<p>" + "Temperature: " + Math.round(response.main.temp) + " °C</p>"); // Round temperature and display in Celsius
+            currentTemp.append("<p>" + "Temperature: " + Math.round(response.main.temp) + " °C</p>");
             currentTemp.append("<p>" + "Humidity: " + response.main.humidity + "%" + "</p>");
             currentTemp.append("<p>" + "Wind Speed: " + response.wind.speed + "</p>");
-
             var urlUV = `https://api.openweathermap.org/data/2.5/uvi?appid=b8ecb570e32c2e5042581abd004b71bb&lat=${response.coord.lat}&lon=${response.coord.lon}`;
 
             $.ajax({
@@ -65,7 +62,6 @@ searchButton.click(function () {
             day.forEach(function (i) {
                 var FiveDayTimeUTC1 = new Date(response.list[i].dt * 1000);
                 FiveDayTimeUTC1 = FiveDayTimeUTC1.toLocaleDateString("en-US");
-
                 fiveDayDiv.append("<div class=fiveDayColor>" + "<p>" + FiveDayTimeUTC1 + "</p>" + `<img src="https://openweathermap.org/img/wn/${response.list[i].weather[0].icon}@2x.png">` + "<p>" + "Temperature: " + Math.round(response.list[i].main.temp) + " °C</p>" + "<p>" + "Humidity: " + response.list[i].main.humidity + "%" + "</p>" + "</div>");
             });
         });

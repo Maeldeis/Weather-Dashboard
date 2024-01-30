@@ -12,4 +12,5 @@ Weather dashboard that runs in the browser using an API and features dynamically
 * Uses the OpenWeather API to retrieve weather data.
 * Uses `localStorage` to store persistent data.
 
-![My Demo](./assets/images./demo)
+![My Demo](./assets/images/demo)
+
