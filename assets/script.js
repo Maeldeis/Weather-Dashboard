@@ -27,7 +27,7 @@ searchButton.click(function () {
             localStorage.setItem("city_" + keyCount, response.name);
             keyCount++;
 
-            var currentName = $("<p>").append(response.name + " " + new Date(response.dt * 1000).toLocaleDateString("en-US"));
+            var currentName = $("<p>").append(response.name + " " + new Date(response.dt * 1000).toLocaleDateString("en-GB"));
             currentName.append(`<img src="https://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png">`);
             var currentTemp = $("<p>").html("Temperature: " + Math.round(response.main.temp) + " °C");
             currentTemp.append("<p>" + "Humidity: " + Math.round(response.main.humidity) + "%" + "</p>");
@@ -56,11 +56,11 @@ searchButton.click(function () {
             fiveDayDiv.empty();
 
             day.forEach(function (i) {
-                var FiveDayTimeUTC1 = new Date(response.list[i].dt * 1000).toLocaleDateString("en-US");
+                var FiveDayTimeUTC1 = new Date(response.list[i].dt * 1000).toLocaleDateString("en-GB");
                 fiveDayDiv.append("<div class='fiveDayColor'>" +
                     "<p>" + FiveDayTimeUTC1 + "</p>" +
                     `<img src="https://openweathermap.org/img/wn/${response.list[i].weather[0].icon}@2x.png">` +
-                    "<p>" + "Temperature: " + Math.round(response.list[i].main.temp) + " °C</p>" +
+                    "<p>" + "Temp: " + Math.round(response.list[i].main.temp) + " °C</p>" +
                     "<p>" + "Humidity: " + response.list[i].main.humidity + "%" + "</p>" +
                     "</div>");
             });
